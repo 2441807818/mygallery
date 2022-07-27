@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/coverView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/bucketName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相册名称"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:maxLength="10"
+            android:ellipsize="end"
+            android:background="#66000000"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
