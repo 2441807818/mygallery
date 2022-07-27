@@ -15,7 +15,9 @@ import java.util.ArrayList;
  * @time： 2022/7/27 16:20
  */
 public class PhotoUtil {
-
+    /**
+     * 获取相册的图片列表
+     */
     public static ArrayList<String> getPhotos(Context context,int BucketId) {
         ArrayList<String> photos = new ArrayList<>();
         // 内容接收者

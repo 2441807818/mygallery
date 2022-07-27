@@ -15,7 +15,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 /**
- * @introduction：
+ * @introduction： 相册内容列表适配器
  * @author： 林锦焜
  * @time： 2022/7/27 15:43
  */
@@ -40,7 +40,9 @@ public class BucketAdapter extends RecyclerView.Adapter<BucketAdapter.BucketHold
     @Override
     public void onBindViewHolder(@NonNull BucketHolder holder, int position) {
         String path = photos.get(position);
+        // 加载图片
         Glide.with(holder.coverView.getContext()).load(new File(path)).into(holder.coverView);
+        // 设置点击事件
         holder.itemView.setOnClickListener(v -> {
             if (onToBigPhotoListener != null) {
                 onToBigPhotoListener.onClick(position);

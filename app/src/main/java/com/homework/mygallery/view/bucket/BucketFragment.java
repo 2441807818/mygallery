@@ -17,6 +17,9 @@ import com.homework.mygallery.util.PhotoUtil;
 
 import java.util.ArrayList;
 
+/**
+ * 相册列表界面
+ */
 public class BucketFragment extends Fragment {
 
     private int BucketId;

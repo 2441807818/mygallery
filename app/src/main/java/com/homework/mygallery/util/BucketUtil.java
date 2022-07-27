@@ -19,6 +19,9 @@ import java.util.List;
  */
 public class BucketUtil {
 
+    /**
+     * 获取相册列表
+     */
     public static List<Bucket> getBuckets(Context context) {
         List<Bucket> buckets = new ArrayList<>();
         // 内容接收者
@@ -49,6 +52,7 @@ public class BucketUtil {
             cursor = resolver.query(uri, projection, "0=0) group by (bucket_display_name", null, "date_added desc");
         }
         if (cursor != null) {
+            // 遍历数据
             while (cursor.moveToNext()) {
                 Bucket bucket = new Bucket();
                 bucket.setBucketName(cursor.getString(0));

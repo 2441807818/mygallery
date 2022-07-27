@@ -34,7 +34,9 @@ public class PhotoFragment extends Fragment {
         requireActivity().setTitle("图片详情");
         binding = FragmentPhotoBinding.inflate(inflater,container,false);
         if (getArguments() != null) {
+            // 获取照片数据
             photos = getArguments().getStringArrayList("photos");
+            // 获取选择的照片位置
             cur = getArguments().getInt("cur");
         }
         return binding.getRoot();
@@ -46,6 +48,7 @@ public class PhotoFragment extends Fragment {
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(requireActivity().getSupportFragmentManager(), getLifecycle(), photos);
         // 给viewPager2控件设置适配器
         binding.viewPager2.setAdapter(viewPagerAdapter);
+        // 滑动效果，也可以去掉此代码
         binding.viewPager2.setPageTransformer(new ZoomOutPageTransformer());
         new Handler().post(() -> {
             binding.viewPager2.setCurrentItem(cur);
